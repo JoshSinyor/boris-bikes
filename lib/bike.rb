@@ -7,7 +7,11 @@ class Bike
   end
 
   def working?
-    true
+    if @status = true
+      true
+    else
+      false
+    end
   end
 
 end
