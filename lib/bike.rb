@@ -1,17 +1,17 @@
 class Bike
 
-  DEFAULT_STATUS = true
+  DEFAULT_STATUS = 1
 
   def initialize(status = DEFAULT_STATUS)
-    @status = status
+    if status == DEFAULT_STATUS
+      @status = 1
+    else
+      @status = 0
+    end
   end
 
-  def working?
-    if @status = true
-      true
-    else
-      false
-    end
+  def working
+    return @status
   end
 
 end

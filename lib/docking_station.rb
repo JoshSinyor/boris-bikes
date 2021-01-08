@@ -13,9 +13,9 @@ class DockingStation
   end
 
   def release_bike
-    raise Exception.new("No bike in station to release.") if empty?
-    @bikes_docked = @bikes_docked.sort_by! { |bike| bike.working? }
-    raise Exception.new("No working bikes in station to release.") if !@bikes_docked[-1].working?
+    raise Exception.new("No bike in station to release.") if @bikes_docked.empty?
+    @bikes_docked = @bikes_docked.sort_by! { |bike| bike.working }
+    raise Exception.new("No working bike in station to release.") if @bikes_docked[-1].working == 0
     @bikes_docked.pop
   end
 
