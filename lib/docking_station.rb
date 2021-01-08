@@ -2,16 +2,23 @@ require_relative "bike"
 
 class DockingStation
 
-  attr_reader = stored_bikes
 
-  @stored_bikes = []
+  def initialize
+    @bike = nil
+  end
 
   def release_bike
-    bike = Bike.new
+    raise Exception.new
   end
 
-  def dock_bike(bike)
-    @stored_bikes.push(bike)
+  def dock(bike)
+    if @bike.nil?
+      @bike = bike
+    else
+      raise Exception.new
+    end
   end
+
+  attr_reader :bike
 
 end
