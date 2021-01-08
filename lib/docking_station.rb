@@ -8,13 +8,16 @@ class DockingStation
   end
 
   def release_bike
+    "Bike released."
     raise Exception.new
   end
 
   def dock(bike)
     if @bike.nil?
       @bike = bike
+      puts "Bike docked."
     else
+      puts "No space available in dock."
       raise Exception.new
     end
   end
