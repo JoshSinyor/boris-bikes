@@ -32,4 +32,15 @@ describe DockingStation do
     expect(bike.working?).to eq true
   end
 
+  it "should, unless a capacity is specified, have a default capacity" do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
+
+=begin
+  it "should, if a capacity is specified, have the specified capacity" do
+    station = DockingStation.new(10)
+    expect(station.capacity).to eq 10
+  end
+=end
+
 end
