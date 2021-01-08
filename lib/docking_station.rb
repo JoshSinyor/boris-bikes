@@ -14,6 +14,7 @@ class DockingStation
 
   def release_bike
     raise Exception.new("No bike in station to release.") if empty?
+    @bikes_docked.sortby
     @bikes_docked.pop
   end
 
